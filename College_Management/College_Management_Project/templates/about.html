@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us{% endblock title %}
+
+{% block style %}
+
+
+<style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+    
+    html {
+      box-sizing: border-box;
+    }
+
+    h1 {
+        font-family: cursive;
+    }
+
+    p {
+        font-family: cursive;
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    
+    .column {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+    
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+    }
+    
+    .about-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #F5270B;
+      color: white;
+    }
+    
+    .container {
+      padding: 0 16px;
+    }
+    
+    .container::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+    .title {
+      color: grey;
+    }
+    
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .button:hover {
+      background-color: #555;
+    }
+    
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+    </style>
+    
+
+{% endblock style %}
+
+
+{% block body %}
+
+<div class="about-section">
+    <h1>About Our College</h1>
+    <p>PCPS College is a constituent member of LBEF Group of Institutions (Lord Buddha Education Foundation). LBEF has a long standing history in the field of education and academics in Nepal, being established in 1998 as the first IT College in Nepal. More than 7000 students have over the years graduated from LBEF Group of Institutions and today, have established their career as bankers, IT experts, entrepreneurs, managers, leaders in their chosen area of work.</p>
+    <p>The inception of PCPS College began with a simple thought of social cause of providing an exposure to a globally accredited degree from a renowned United Kingdom (UK) based university to all Nepal and neighbourhood citizens. This initial thought was put into motion by launching an exhaustive research on UK based Universities and our sincere efforts led us on to the University of Bedfordshire (UoB), with over a hundred years of experience as a quality education provider in the UK. PCPS is, now, one of the among other educational institutions in Nepal who offer and deliver UK degrees for various undergraduate and graduate level courses.</p>
+  </div>
+  
+  <h2 style="text-align:center">Our Team</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="https://patancollege.edu.np/wp-content/uploads/2018/03/pankaj-jalan-profile.jpg" alt="Chairman" style="width:100%">
+        <div class="container">
+          <h2>Er. Pankaj Jalan</h2>
+          <p class="title">Chairman</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="https://patancollege.edu.np/wp-content/uploads/2018/03/prakash_kumar-profile-1.jpg" alt="Executive Director" style="width:100%">
+        <div class="container">
+          <h2>Er. Prakash Kumar</h2>
+          <p class="title">Executive Director</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="column">
+      <div class="card">
+        <img src="https://patancollege.edu.np/wp-content/uploads/2018/03/ajaya-sharma.jpg" alt="Dean Academics" style="width:100%">
+        <div class="container">
+          <h2>Er. Ajaya Sharma</h2>
+          <p class="title">Dean Academics</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+          <img src="https://patancollege.edu.np/wp-content/uploads/2021/12/SunandaSir-profile.jpg" alt="Chief Operating Officer" style="width:100%">
+          <div class="container">
+            <h2>Sunanda Regmi</h2>
+            <p class="title">Chief Operating Officer</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="https://patancollege.edu.np/wp-content/uploads/2021/12/DipakSir-profile.jpg" alt="Program Leader (School of Computing)" style="width:100%">
+          <div class="container">
+            <h2>Deepak Kumar Karna</h2>
+            <p class="title">Program Leader (School of Computing)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="https://patancollege.edu.np/wp-content/uploads/2022/07/AnjanaMam-profile.jpg" alt="Admission Manager" style="width:100%">
+          <div class="container">
+            <h2>Anjana Tandukar</h2>
+            <p class="title">Admission Manager</p>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+{% endblock body %}
+
+
+
+
+
+<div class="about-section">
+  <h1>About Us Page</h1>
+  <p>Some text about who we are and what we do.</p>
+  <p>Resize the browser window to see that this page is responsive by the way.</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>Jane Doe</h2>
+        <p class="title">CEO & Founder</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>jane@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Mike Ross</h2>
+        <p class="title">Art Director</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>mike@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="/w3images/team3.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>John Doe</h2>
+        <p class="title">Designer</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>john@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
