@@ -8,6 +8,8 @@ from .forms import CreateUserForm
 from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.decorators import login_required
 
+from django.contrib.auth.models import Group
+
 from .decorators import allowed_users, unauthenticated_user, page_redirect
 
 # Create your views here.
@@ -52,8 +54,12 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            user = form.save()
             user_name = form.cleaned_data.get('username')
+
+            group = Group.objects.get(name='student')
+            user.groups.add(group)
+
             messages.success(request, 'Account was created for ' + user_name )
             return redirect('login')
 
