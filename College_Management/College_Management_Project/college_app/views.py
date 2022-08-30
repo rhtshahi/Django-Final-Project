@@ -8,10 +8,10 @@ from .forms import CreateUserForm
 from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.decorators import login_required
 
-from .decorators import unauthenticated_user
+from .decorators import allowed_users, unauthenticated_user, page_redirect
 
 # Create your views here.
-
+# @page_redirect
 def homePage(request):
     # return HttpResponse('About')
     return render(request, 'index.html')
@@ -19,7 +19,7 @@ def homePage(request):
 def about(request):
     return render(request, 'about.html')
 
-
+@unauthenticated_user
 def loginPage(request):
 
     if request.method == 'POST':
@@ -31,7 +31,8 @@ def loginPage(request):
         if user is not None:
             login(request, user)
             #username = request.user.username latest: request.user.is_authenticated
-            return redirect('student-home')
+            return redirect('admin-home')
+            # return redirect('home')
 
         else:
             messages.info(request, 'Incorrect Username/Password!!!')
@@ -72,15 +73,19 @@ def registerPage(request):
         # return render(request, 'register.html', context)
 
 @login_required(login_url='login')
+# @allowed_users(allowed_roles=['admin'])
+@page_redirect
 def adminPage(request):
     return render(request, 'adminHome.html')
 
 
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['teacher'])
 def teacherPage(request):
     return render(request, 'teacherHome.html')
 
 
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['student'])
 def studentPage(request):
     return render(request, 'studentHome.html')
