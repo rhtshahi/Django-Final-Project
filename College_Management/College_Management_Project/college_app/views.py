@@ -4,13 +4,16 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
 #from College_Management_Project.college_app.decorators import unauthenticated_user
-from .forms import CreateUserForm
+from .forms import CreateUserForm, PostNoticeForm
 from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import Group
 
 from .decorators import allowed_users, unauthenticated_user, page_redirect
+
+from .forms import PostNoticeForm
+from .models import Notice
 
 # Create your views here.
 # @page_redirect
@@ -20,6 +23,12 @@ def homePage(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def course(request):
+    return render(request, 'course.html')
+
+def contact(request):
+    return render(request, 'contact.html')
 
 @unauthenticated_user
 def loginPage(request):
@@ -95,3 +104,22 @@ def teacherPage(request):
 @allowed_users(allowed_roles=['student'])
 def studentPage(request):
     return render(request, 'studentHome.html')
+
+# @login_required(login_url='login')
+# @allowed_users(allowed_roles=['teacher'])
+def postNotice(request):
+
+    form = PostNoticeForm()
+
+    if request.method =='POST':
+        form =PostNoticeForm(request.POST)
+
+        if form.is_valid():
+            instance=form.save(commit=False)
+            instance.posted_by = request.user
+            instance.save()
+            return redirect('teacher-home')
+
+    context = {'form' : form}
+
+    return render(request, 'postNotice.html',context)

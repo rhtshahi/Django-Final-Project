@@ -30,22 +30,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'teacher-home' %}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about">About Us</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="/course">Courses</a>
+          <a class="nav-link" href="{% url 'post-notice' %}">Post Notice</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact Us</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
         </li>
         
         <!-- <li class="nav-item">

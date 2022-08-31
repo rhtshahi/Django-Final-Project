@@ -1,6 +1,16 @@
-<h1>This is home-page for teacher</h1>
+{% extends 'teacherBase.html' %}
+
+{% comment %} <h1>This is home-page for teacher</h1>
 
 <h1>Hello, {{request.user}}</h1>
     <h2>This is Home Page</h2>
 
-    <a href="/logout">Logout</a>
+    <a href="/logout">Logout</a> 
+{% endcomment %}
+
+
+{% block title %}Teacher{% endblock title %}
+
+{% block body %}<h1>Hello, {{request.user}}</h1>{% endblock body %}
+
+
