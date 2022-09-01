@@ -36,6 +36,17 @@
           <a class="nav-link" href="{% url 'student-view-notice' %}">View Notice</a>
         </li>
 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Notice Type
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{% url 'student-view-urgent-notice' %}">Urgent</a>
+            <a class="dropdown-item" href="{% url 'student-view-important-notice' %}">Important</a>
+            <a class="dropdown-item" href="{% url 'student-view-basic-notice' %}">Basic</a>
+          </div>
+        </li>
+
         <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
         </li>

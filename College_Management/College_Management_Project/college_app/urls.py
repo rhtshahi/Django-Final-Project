@@ -15,6 +15,9 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('post-notice/', views.postNotice, name='post-notice'),
     path('student-view-notice/', views.student_view_notice, name='student-view-notice'),
+    path('student-view-basic-notice/', views.student_view_basic_notice, name='student-view-basic-notice'),
+    path('student-view-important-notice/', views.student_view_important_notice, name='student-view-important-notice'),
+    path('student-view-urgent-notice/', views.student_view_urgent_notice, name='student-view-urgent-notice'),
     # path('about/', views.about, name='about'),
     # path('services/', views.services, name='services'),
     # 

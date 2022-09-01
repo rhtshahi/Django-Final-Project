@@ -125,9 +125,34 @@ def postNotice(request):
     return render(request, 'postNotice.html',context)
 
 
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['student'])
 def student_view_notice(request):
     all_notice =  Notice.objects.all()
     context = {'all_notice': all_notice}
 
     return render(request, 'studentViewNotice.html', context)
 
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['student'])
+def student_view_basic_notice(request):
+    basic_notice = Notice.objects.filter(priority='Basic').values()
+    context = {'basic_notice' : basic_notice}
+
+    return render(request, 'studentBasicNotice.html', context)
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['student'])
+def student_view_important_notice(request):
+    important_notice = Notice.objects.filter(priority='Important').values()
+    context = {'important_notice' : important_notice}
+
+    return render(request, 'studentImportantNotice.html', context)
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['student'])
+def student_view_urgent_notice(request):
+    urgent_notice = Notice.objects.filter(priority='Urgent').values()
+    context = {'urgent_notice' : urgent_notice}
+
+    return render(request, 'studentUrgentNotice.html', context)
