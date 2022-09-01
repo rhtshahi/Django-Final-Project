@@ -1,6 +1,11 @@
+{% extends 'studentBase.html' %}
+
+{% block title %}Student{% endblock title %}
+
+{% block body %}
 <h1>This is home-page for student</h1>
 
 <h1>Hello, {{request.user}}</h1>
-    <h2>This is Home Page</h2>
+    <h2>This is Home Page for student</h2>
 
-    <a href="/logout">Logout</a>
+{% endblock body %}

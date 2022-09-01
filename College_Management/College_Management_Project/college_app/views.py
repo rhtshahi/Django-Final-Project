@@ -105,8 +105,8 @@ def teacherPage(request):
 def studentPage(request):
     return render(request, 'studentHome.html')
 
-# @login_required(login_url='login')
-# @allowed_users(allowed_roles=['teacher'])
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['teacher'])
 def postNotice(request):
 
     form = PostNoticeForm()
@@ -123,3 +123,11 @@ def postNotice(request):
     context = {'form' : form}
 
     return render(request, 'postNotice.html',context)
+
+
+def student_view_notice(request):
+    all_notice =  Notice.objects.all()
+    context = {'all_notice': all_notice}
+
+    return render(request, 'studentViewNotice.html', context)
+
