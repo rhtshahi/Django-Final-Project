@@ -144,7 +144,7 @@ def student_view_basic_notice(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['student'])
 def student_view_important_notice(request):
-    important_notice = Notice.objects.filter(priority='Important').values()
+    important_notice = Notice.objects.filter(priority='Important')
     context = {'important_notice' : important_notice}
 
     return render(request, 'studentImportantNotice.html', context)
